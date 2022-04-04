@@ -10,8 +10,8 @@ backend:
 # used together with `npx netlify-cms-proxy-server`. https://www.netlifycms.org/docs/beta-features/#working-with-a-local-git-repository
 local_backend: true
 
-media_folder: static/img
-public_folder: /img
+media_folder: static/media
+public_folder: /media
 
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
@@ -65,9 +65,26 @@ collections:
           label: 'Project Category',
           name: 'category',
           widget: 'select',
-          default: 'animals',
-          options: [{ label: 'Animals', value: 'animals' }, { label: 'Food', value: 'food' }],
+          default: 'misc',
+          options: [
+            { label: 'Outdoor', value: 'outdoor' },
+            { label: 'Portraits', value: 'portraits' },
+            { label: 'Sacral', value: 'sacral' },
+            { label: 'Misc', value: 'misc' },
+          ],
         }
+      - {
+        label: 'Project Material',
+        name: 'material',
+        widget: 'select',
+        default: 'bronze',
+        options: [
+          { label: 'Bronze', value: 'bronze' },
+          { label: 'Marble', value: 'marble' },
+          { label: 'Stone', value: 'stone' },
+          { label: 'Wood', value: 'wood' },
+        ],
+      }
       - { label: 'Title', name: 'title', widget: 'string', required: true }
       - { label: 'Description', name: 'description', widget: 'string', required: false }
       - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
