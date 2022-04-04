@@ -27,41 +27,43 @@ collections:
         fields:
           - { label: Site Name, name: sitename, widget: string, hint: 'This is used for the site title' }
           - {
-              label: Site Description,
-              name: sitedescription,
-              widget: string,
-              hint: 'This is used as descriptive text for links that link to this site',
-            }
-          - {
-              label: Site Language,
-              name: sitelang,
-              widget: string,
-              pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
-            }
-          # - { label: Site Email, name: siteemail, widget: string, required: false }
-      - label: 'About'
-        name: 'about'
-        file: 'content/site/about.md'
-        editor:
-          preview: false
-        fields:
-          - {
-            label: 'About Title',
-            name: 'about-title',
+            label: Site Description,
+            name: sitedescription,
             widget: string,
-            required: true,
+            hint: 'This is used as descriptive text for links that link to this site',
           }
           - {
-            label: 'About Cover',
-            name: 'aboutcover',
-            widget: image,
-            required: true,
+            label: Site Language,
+            name: sitelang,
+            widget: string,
+            pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
           }
-          - {
-            label: 'Content',
-            name: 'aboutbody',
-            widget: 'markdown',
-          }
+          # - { label: Site Email, name: siteemail, widget: string, required: false }
+
+  - name: 'about'
+    label: 'About'
+    folder: 'content/about'
+    create: false
+    format: 'frontmatter'
+    fields:
+      - {
+        label: 'Title',
+        name: 'title',
+        widget: string,
+        required: true,
+      }
+      - {
+        label: 'Cover',
+        name: 'cover',
+        widget: image,
+        required: true,
+      }
+      - {
+        label: 'Content',
+        name: 'body',
+        widget: 'markdown',
+        required: false,
+      }
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
@@ -85,17 +87,17 @@ collections:
     preview_path: 'projects/{{slug}}'
     fields:
       - {
-          label: 'Project Category',
-          name: 'category',
-          widget: 'select',
-          default: 'misc',
-          options: [
-            { label: 'Outdoor', value: 'outdoor' },
-            { label: 'Portraits', value: 'portraits' },
-            { label: 'Sacral', value: 'sacral' },
-            { label: 'Misc', value: 'misc' },
-          ],
-        }
+        label: 'Project Category',
+        name: 'category',
+        widget: 'select',
+        default: 'misc',
+        options: [
+          { label: 'Outdoor', value: 'outdoor' },
+          { label: 'Portraits', value: 'portraits' },
+          { label: 'Sacral', value: 'sacral' },
+          { label: 'Misc', value: 'misc' },
+        ],
+      }
       - {
         label: 'Project Material',
         name: 'material',
@@ -113,10 +115,10 @@ collections:
       - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
       - { label: 'Content', name: 'body', widget: 'markdown', required: false }
       - {
-          label: 'Gallery',
-          name: 'gallery',
-          widget: 'list',
-          required: false,
-          summary: '{{fields.image}}',
-          field: { label: 'Image', name: 'image', widget: 'image' },
-        }
+        label: 'Gallery',
+        name: 'gallery',
+        widget: 'list',
+        required: false,
+        summary: '{{fields.image}}',
+        field: { label: 'Image', name: 'image', widget: 'image' },
+      }

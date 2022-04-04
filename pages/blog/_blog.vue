@@ -5,6 +5,7 @@
         <router-back class="block" />
       </nav>
 
+      <pre>{{ post }}</pre>
       <article>
         <h5
           v-if="post.createdAt"
