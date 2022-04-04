@@ -6,9 +6,6 @@
       </nav>
 
       <article>
-        ELO
-        <pre>{{ post }}</pre>
-
         <img
           v-if="post.cover"
           class="cover-image"
