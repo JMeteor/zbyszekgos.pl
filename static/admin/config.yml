@@ -59,7 +59,7 @@ collections:
     create: false
     format: frontmatter
     i18n:
-      strucutre: multiple_files
+      structure: multiple_files
       locales: [pl, en]
     fields:
       - {
