@@ -135,14 +135,14 @@ collections:
         name: title,
         widget: string,
         required: true,
-        i18n: true
+        i18n: true,
       }
       - {
         label: Opis,
         name: description,
         widget: string,
         required: false,
-        i18n: true
+        i18n: true,
       }
       - {
         label: Okładka,
@@ -155,8 +155,8 @@ collections:
         label: Treść,
         name: body,
         widget: markdown,
-        required: false
-        i18n: true
+        required: false,
+        i18n: true,
       }
       - {
         label: Galeria zdjęć,
@@ -167,6 +167,6 @@ collections:
         field: {
           label: Zdjęcie,
           name: image,
-          widget: image
+          widget: image,
         },
       }
