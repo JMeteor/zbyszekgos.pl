@@ -15,65 +15,75 @@ public_folder: /media
 
 locale: 'pl'
 
+i18n:
+  structure: multiple_files
+  locales: [pl, en]
+  default_locale: pl
+
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
-  - label: 'Site settings'
+  - label: Ustawienia strony
     name: 'site'
     files:
-      - label: 'Info'
-        name: 'info'
+      - label: Informacje
+        name: info
         file: 'content/site/info.json'
-        format: 'json'
+        format: json
         editor:
           preview: false
         fields:
           - {
-            label: 'Tytuł strony',
+            label: Tytuł strony,
             name: sitename,
             widget: string,
-            hint: 'This is used for the site title'
+            hint: This is used for the site title
           }
           - {
-            label: 'Opis strony',
+            label: Opis strony,
             name: sitedescription,
             widget: string,
-            hint: 'This is used as descriptive text for links that link to this site',
+            hint: This is used as descriptive text for links that link to this site,
           }
           - {
-            label: 'Język strony',
+            label: Język strony,
             name: sitelang,
             widget: string,
             pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
           }
           # - { label: Site Email, name: siteemail, widget: string, required: false }
 
-  - name: 'about'
-    label: 'O mnie'
-    folder: 'content/about'
+  - name: about
+    label: O mnie
+    folder: content/about
     create: false
-    format: 'frontmatter'
+    format: frontmatter
+    i18n:
+      strucutre: multiple_files
+      locales: [pl, en]
     fields:
       - {
-        label: 'Tytuł',
-        name: 'title',
+        label: Tytuł,
+        name: title,
         widget: string,
         required: true,
+        i18n: true
       }
       - {
-        label: 'Zdjęcie',
-        name: 'cover',
+        label: Zdjęcie,
+        name: cover,
         widget: image,
         required: true,
       }
       - {
-        label: 'Treść',
-        name: 'body',
-        widget: 'markdown',
-        required: false,
+        label: Treść,
+        name: body,
+        widget: markdown,
+        required: true,
+        i18n: true
       }
-  - name: 'blog'
-    label: 'Aktualności'
-    folder: 'content/blog'
+  - name: blog
+    label: Aktualności
+    folder: content/blog
     create: true
     format: 'frontmatter'
     slug: '{{fields.createdAt}}-{{slug}}'
@@ -84,48 +94,79 @@ collections:
       - { label: 'Tytuł', name: 'title', widget: 'string', required: true }
       - { label: 'Opis', name: 'description', widget: 'string', required: false }
       - { label: 'Tekst', name: 'body', widget: 'markdown', required: false }
-  - name: 'projects'
-    label: 'Projekty'
-    label_singular: 'Projekt'
-    folder: 'content/projects'
+  - name: projects
+    label: Projekty
+    label_singular: Projekt
+    folder: content/projects
     create: true
-    format: 'frontmatter'
+    format: frontmatter
     slug: '{{slug}}'
     preview_path: 'projects/{{slug}}'
+    i18n:
+      structure: multiple_files
+      locales: [pl, en]
     fields:
       - {
-        label: 'Kategorie',
-        name: 'category',
-        widget: 'select',
-        default: 'misc',
+        label: Kategoria,
+        name: category,
+        widget: select,
+        default: misc,
         options: [
-          { label: 'Outdoor', value: 'outdoor' },
-          { label: 'Portraits', value: 'portraits' },
-          { label: 'Sacral', value: 'sacral' },
-          { label: 'Misc', value: 'misc' },
+          { label: Miejska, value: outdoor },
+          { label: Portret, value: portraits },
+          { label: Sakralna, value: sacral },
+          { label: Inna, value: misc },
         ],
       }
       - {
-        label: 'Materiały',
-        name: 'material',
-        widget: 'select',
-        default: 'bronze',
+        label: Materiał,
+        name: material,
+        widget: select,
+        default: bronze,
         options: [
-          { label: 'Brąz', value: 'bronze' },
-          { label: 'Marmur', value: 'marble' },
-          { label: 'Kamień', value: 'stone' },
-          { label: 'Drewno', value: 'wood' },
+          { label: Brąz, value: bronze },
+          { label: Marmur, value: marble },
+          { label: Kamień, value: stone },
+          { label: Drewno, value: wood },
         ],
       }
-      - { label: 'Tytuł', name: 'title', widget: 'string', required: true }
-      - { label: 'Opis', name: 'description', widget: 'string', required: false }
-      - { label: 'Okładka', name: 'cover', widget: 'image', required: false, allow_multiple: false }
-      - { label: 'Treść', name: 'body', widget: 'markdown', required: false }
       - {
-        label: 'Galeria',
-        name: 'gallery',
-        widget: 'list',
+        label: Tytuł,
+        name: title,
+        widget: string,
+        required: true,
+        i18n: true
+      }
+      - {
+        label: Opis,
+        name: description,
+        widget: string,
+        required: false,
+        i18n: true
+      }
+      - {
+        label: Okładka,
+        name: cover,
+        widget: image,
+        required: false,
+        allow_multiple: false,
+      }
+      - {
+        label: Treść,
+        name: body,
+        widget: markdown,
+        required: false
+        i18n: true
+      }
+      - {
+        label: Galeria zdjęć,
+        name: gallery,
+        widget: list,
         required: false,
         summary: '{{fields.image}}',
-        field: { label: 'Image', name: 'image', widget: 'image' },
+        field: {
+          label: Zdjęcie,
+          name: image,
+          widget: image
+        },
       }
