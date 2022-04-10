@@ -1,5 +1,5 @@
-site_url: https://ntn-boilerplate.netlify.app/
-logo_url: https://ntn-boilerplate.netlify.app/icon.png
+site_url: https://zbyszekgos.netlify.app/
+logo_url: https://zbyszekgos.netlify.app/icon.png
 
 publish_mode: editorial_workflow
 backend:
@@ -13,6 +13,8 @@ local_backend: true
 media_folder: static/media
 public_folder: /media
 
+locale: 'pl'
+
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
   - label: 'Site settings'
@@ -25,15 +27,20 @@ collections:
         editor:
           preview: false
         fields:
-          - { label: Site Name, name: sitename, widget: string, hint: 'This is used for the site title' }
           - {
-            label: Site Description,
+            label: 'Tytuł strony',
+            name: sitename,
+            widget: string,
+            hint: 'This is used for the site title'
+          }
+          - {
+            label: 'Opis strony',
             name: sitedescription,
             widget: string,
             hint: 'This is used as descriptive text for links that link to this site',
           }
           - {
-            label: Site Language,
+            label: 'Język strony',
             name: sitelang,
             widget: string,
             pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
@@ -41,31 +48,31 @@ collections:
           # - { label: Site Email, name: siteemail, widget: string, required: false }
 
   - name: 'about'
-    label: 'About'
+    label: 'O mnie'
     folder: 'content/about'
     create: false
     format: 'frontmatter'
     fields:
       - {
-        label: 'Title',
+        label: 'Tytuł',
         name: 'title',
         widget: string,
         required: true,
       }
       - {
-        label: 'Cover',
+        label: 'Zdjęcie',
         name: 'cover',
         widget: image,
         required: true,
       }
       - {
-        label: 'Content',
+        label: 'Treść',
         name: 'body',
         widget: 'markdown',
         required: false,
       }
   - name: 'blog'
-    label: 'Blog'
+    label: 'Aktualności'
     folder: 'content/blog'
     create: true
     format: 'frontmatter'
@@ -73,13 +80,13 @@ collections:
     # editor:
     #   preview: true
     fields:
-      - { label: 'Created Date', name: 'createdAt', widget: 'datetime', date_format: "YYYY-MM-DD", time_format: false }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+      - { label: 'Data utworzenia', name: 'createdAt', widget: 'datetime', date_format: "YYYY-MM-DD", time_format: false }
+      - { label: 'Tytuł', name: 'title', widget: 'string', required: true }
+      - { label: 'Opis', name: 'description', widget: 'string', required: false }
+      - { label: 'Tekst', name: 'body', widget: 'markdown', required: false }
   - name: 'projects'
-    label: 'Projects'
-    label_singular: 'Project'
+    label: 'Projekty'
+    label_singular: 'Projekt'
     folder: 'content/projects'
     create: true
     format: 'frontmatter'
@@ -87,7 +94,7 @@ collections:
     preview_path: 'projects/{{slug}}'
     fields:
       - {
-        label: 'Project Category',
+        label: 'Kategorie',
         name: 'category',
         widget: 'select',
         default: 'misc',
@@ -99,23 +106,23 @@ collections:
         ],
       }
       - {
-        label: 'Project Material',
+        label: 'Materiały',
         name: 'material',
         widget: 'select',
         default: 'bronze',
         options: [
-          { label: 'Bronze', value: 'bronze' },
-          { label: 'Marble', value: 'marble' },
-          { label: 'Stone', value: 'stone' },
-          { label: 'Wood', value: 'wood' },
+          { label: 'Brąz', value: 'bronze' },
+          { label: 'Marmur', value: 'marble' },
+          { label: 'Kamień', value: 'stone' },
+          { label: 'Drewno', value: 'wood' },
         ],
       }
-      - { label: 'Title', name: 'title', widget: 'string', required: true }
-      - { label: 'Description', name: 'description', widget: 'string', required: false }
-      - { label: 'Cover Image', name: 'cover', widget: 'image', required: false, allow_multiple: false }
-      - { label: 'Content', name: 'body', widget: 'markdown', required: false }
+      - { label: 'Tytuł', name: 'title', widget: 'string', required: true }
+      - { label: 'Opis', name: 'description', widget: 'string', required: false }
+      - { label: 'Okładka', name: 'cover', widget: 'image', required: false, allow_multiple: false }
+      - { label: 'Treść', name: 'body', widget: 'markdown', required: false }
       - {
-        label: 'Gallery',
+        label: 'Galeria',
         name: 'gallery',
         widget: 'list',
         required: false,
