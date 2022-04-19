@@ -1,6 +1,6 @@
 ---
 title: Vitae
-cover: /media/about_1.jpg
+cover: /media/about.jpg
 ---
 
 Nazywam się Zbyszek Gos i jestem rzeźbiarzem z ponad 25-letnim doświadczeniem. Moja przygoda z rzeźbą zaczęła się gdy byłem jeszcze nastolatkiem i szybko stała się moją życiową pasją.
