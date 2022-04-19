@@ -31,12 +31,18 @@
       </ul>
 
       <nuxt-content :document="project" />
+
+      <pre>prev:{{prev}}</pre>
+      <pre>next:{{next}}</pre>
+      <prev-next :prev="prev" :next="next" />
     </article>
   </main>
 </template>
 
 <script>
+import PrevNext from "~/components/global/PrevNext";
 export default {
+  components: {PrevNext},
   async asyncData({ $content, params, app, error }) {
     const project =  await $content(app.i18n.locale, 'projects', params.slug)
       .fetch()
@@ -44,7 +50,17 @@ export default {
         error({ statusCode: 404, message: "Project does not exists" });
       })
 
-    return { project };
+    const [prev, next] = await $content(app.i18n.locale, 'projects')
+      .only(['title', 'slug'])
+      .sortBy('createdAt', 'asc')
+      .surround(params.slug)
+      .fetch()
+
+    return {
+      project,
+      prev,
+      next
+    }
   },
 }
 </script>

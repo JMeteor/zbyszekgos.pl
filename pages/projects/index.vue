@@ -1,23 +1,37 @@
 <template>
   <main>
-    <pre>{{ projects }}</pre>
-    <!--    <section v-if="posts" class="w-full max-w-5xl mx-auto">
-          <h1 class="title">Projects</h1>
-          <posts post-type="projects" :amount="10" />
-        </section>-->
+    <h1 class="title text-center mb-8">Projects page</h1>
+    <ol class="flex justify-between gap-2">
+      <li v-for="(project, index) in projects" :key="index" class="max-w-md">
+        <nuxt-link
+          class="block text-center"
+          :to="localePath(project.path)"
+        >
+          <img :src="project.cover" alt="" />
+          <h2 class="subtitle mt-3">{{ project.title }}</h2>
+        </nuxt-link>
+
+      </li>
+    </ol>
   </main>
 </template>
 
 <script>
 export default {
-  async asyncData({ $content, error }) {
-    const projects =  await $content("projects")
+  async asyncData({ $content, app, error }) {
+    const projects =  await $content(app.i18n.locale, "projects")
+      .only(['title', 'slug', 'cover'])
       .fetch()
       .catch(() => {
         error({ message: "Project Page not found" });
       })
 
-    return { projects };
+    return {
+      projects: projects.map((projects) => ({
+        ...projects,
+        path: projects.path.replace(`/${app.i18n.locale}`, '')
+      }))
+    };
   },
 }
 </script>
