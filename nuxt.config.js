@@ -125,7 +125,7 @@ export default {
     langDir: 'locales/',
     vueI18n: {
       fallbackLocale: 'pl'
-    }
+    },
   },
   tailwindcss: {
     viewer: false, // disabled because it causes `Error: Cannot find module 'tailwindcss/resolveConfig'`, fixed in https://github.com/nuxt-community/tailwindcss-module/pull/303

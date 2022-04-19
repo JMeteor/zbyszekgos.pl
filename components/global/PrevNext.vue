@@ -2,7 +2,7 @@
   <div class="flex justify-between">
     <nuxt-link
       v-if="prev"
-      :to="{ name: 'project-slug', params: prev.slug }"
+      :to="localePath(prev.path)"
       class="font-bold text-primary hover:underline"
     >
       {{ prev.title }}
@@ -10,7 +10,7 @@
     <span v-else>&nbsp;</span>
     <nuxt-link
       v-if="next"
-      :to="{ name: 'project-slug', params: next.slug}"
+      :to="localePath(next.path)"
       class="font-bold hover:underline"
     >
       {{ next.title }}

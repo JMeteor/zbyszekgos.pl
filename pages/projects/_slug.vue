@@ -32,8 +32,6 @@
 
       <nuxt-content :document="project" />
 
-      <pre>prev:{{prev}}</pre>
-      <pre>next:{{next}}</pre>
       <prev-next :prev="prev" :next="next" />
     </article>
   </main>
@@ -58,8 +56,14 @@ export default {
 
     return {
       project,
-      prev,
-      next
+      prev: {
+        ...prev,
+        path: prev?.path.replace(`/${app.i18n.locale}`, '')
+      },
+      next: {
+        ...next,
+        path: next?.path.replace(`/${app.i18n.locale}`, '')
+      }
     }
   },
 }

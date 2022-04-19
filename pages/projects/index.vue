@@ -1,13 +1,17 @@
 <template>
   <main>
     <h1 class="title text-center mb-8">Projects page</h1>
-    <ol class="flex justify-between gap-2">
+    <ol class="flex justify-center gap-5">
       <li v-for="(project, index) in projects" :key="index" class="max-w-md">
         <nuxt-link
           class="block text-center"
           :to="localePath(project.path)"
         >
-          <img :src="project.cover" alt="" />
+          <img
+            :src="project.cover"
+            :alt="project.title"
+            class="max-h-96"
+          />
           <h2 class="subtitle mt-3">{{ project.title }}</h2>
         </nuxt-link>
 

@@ -1,3 +1,9 @@
 {
-  "welcome": "Dzień dobry, Świecie ^_^"
+  "welcome": "Dzień dobry, Świecie ^_^",
+  "navigation": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "blog": "Aktualności",
+    "projects": "Prace"
+  }
 }

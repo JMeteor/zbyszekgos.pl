@@ -1,3 +1,9 @@
 {
-  "welcome": "Hello, World ^_^"
+  "welcome": "Hello, World ^_^",
+  "navigation": {
+    "home": "Homepage",
+    "about": "About me",
+    "blog": "News",
+    "projects": "Projects"
+  }
 }
