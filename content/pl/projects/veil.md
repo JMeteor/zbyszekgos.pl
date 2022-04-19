@@ -1,6 +1,6 @@
 ---
 category: outdoor
-material: bronze
+material: marble
 title: Veil
 cover: /media/veil.jpg
 gallery:
