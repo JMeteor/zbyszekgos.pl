@@ -13,10 +13,13 @@ export default {
   env: {
     url:
       process.env.NODE_ENV === 'production'
-        ? process.env.URL || 'http://createADotEnvFileAndSetURL'
-        : 'http://localhost:3000',
+        ? process.env.BASE_URL : 'http://localhost:3000',
     lang: SITE_INFO.sitelang || 'en-US'
   },
+  publicRuntimeConfig: {
+    baseURL: process.env.NODE_ENV = 'production' ? process.env.BASE_URL : 'http://localhost:3000'
+  },
+  privateRuntimeConfig: {},
   /*
    ** Headers of the page
    */
