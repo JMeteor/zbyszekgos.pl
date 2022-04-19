@@ -14,7 +14,7 @@ export default {
     url:
       process.env.NODE_ENV === 'production'
         ? process.env.BASE_URL : 'http://localhost:3000',
-    lang: SITE_INFO.sitelang || 'en-US'
+    lang: SITE_INFO.sitelang || 'pl-PL'
   },
   publicRuntimeConfig: {
     baseURL: process.env.NODE_ENV = 'production' ? process.env.BASE_URL : 'http://localhost:3000'
