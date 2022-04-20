@@ -2,12 +2,7 @@
   <main>
     <section v-if="posts" class="w-full max-w-5xl mx-auto">
       <h1 class="title">Blog</h1>
-      <ul>
-        <li v-for="(post, index) in posts" :key="index">
-          <p>{{ post.description }}</p>
-          <nuxt-link :to="localePath(post.path)">LINK</nuxt-link>
-        </li>
-      </ul>
+
     </section>
   </main>
 </template>
