@@ -17,16 +17,16 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style lang="scss" scoped>
 .icon {
   background-color: var(--bg-secondary);
   border-color: var(--border-color);
-  @apply relative m-0 p-2 top-0 cursor-pointer rounded border transition-all duration-200 ease-in-out;
+  //@apply relative m-0 p-2 top-0 cursor-pointer rounded border transition-all duration-200 ease-in-out;
 
   &:hover {
     transform: translateY(-1px);
     border-color: var(--border-color-secondary);
-    @apply text-white;
+    //@apply text-white;
   }
   &.selected {
     color: var(--color-primary);

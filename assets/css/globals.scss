@@ -3,11 +3,10 @@ html {
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  padding: env(safe-area-inset);
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
-  @apply transition-colors duration-200 ease-in-out;
+  transition: background-color, colors 200ms ease-in-out;
 }
