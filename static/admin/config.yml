@@ -1,5 +1,5 @@
-site_url: https://zbyszekgos.netlify.app/
-logo_url: https://zbyszekgos.netlify.app/icon.png
+site_url: https://zbyszekgos.pl/
+logo_url: https://zbyszekgos.pl/icon.png
 
 publish_mode: editorial_workflow
 backend:
@@ -95,14 +95,14 @@ collections:
       - { label: 'Tytuł', name: 'title', widget: 'string', required: true }
       - { label: 'Opis', name: 'description', widget: 'string', required: false }
       - { label: 'Tekst', name: 'body', widget: 'markdown', required: false }
-  - name: projects
+  - name: work
     label: Projekty
     label_singular: Projekt
-    folder: content/projects
+    folder: content/work
     create: true
     format: frontmatter
     slug: '{{slug}}'
-    preview_path: 'projects/{{slug}}'
+    preview_path: 'work/{{slug}}'
     i18n:
       structure: multiple_files
       locales: [pl, en]

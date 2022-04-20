@@ -8,10 +8,7 @@
         <nuxt-link class="btn block" :to="localePath('/about')">{{ $t("navigation.about")}}</nuxt-link>
       </li>
       <li class="flex-1 ml-2">
-        <nuxt-link class="btn block" :to="localePath('/blog')">{{ $t("navigation.blog")}}</nuxt-link>
-      </li>
-      <li class="flex-1 ml-2">
-        <nuxt-link class="btn block" :to="localePath('/projects')">{{ $t("navigation.projects")}}</nuxt-link>
+        <nuxt-link class="btn block" :to="localePath('/work')">{{ $t("navigation.work")}}</nuxt-link>
       </li>
     </ul>
   </nav>

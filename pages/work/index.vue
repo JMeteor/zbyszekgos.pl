@@ -2,17 +2,20 @@
   <main>
     <h1 class="title text-center mb-8">Projects page</h1>
     <ol class="flex justify-center gap-5">
-      <li v-for="(project, index) in projects" :key="index" class="max-w-md">
+      <li
+        v-for="(artwork, index) in artworks"
+        :key="index"
+        class="max-w-md">
         <nuxt-link
           class="block text-center"
-          :to="localePath(project.path)"
+          :to="localePath({ name: 'work-slug', params: { slug: artwork.slug } })"
         >
           <img
-            :src="project.cover"
-            :alt="project.title"
+            :src="artwork.cover"
+            :alt="artwork.title"
             class="max-h-96"
           />
-          <h2 class="subtitle mt-3">{{ project.title }}</h2>
+          <h2 class="subtitle mt-3">{{ artwork.title }}</h2>
         </nuxt-link>
 
       </li>
@@ -22,8 +25,8 @@
 
 <script>
 export default {
-  async asyncData({ $content, app, error }) {
-    const projects =  await $content(app.i18n.locale, "projects")
+  async asyncData({ $content, i18n, error }) {
+    const artworks =  await $content(i18n.locale, "work")
       .only(['title', 'slug', 'cover'])
       .fetch()
       .catch(() => {
@@ -31,11 +34,8 @@ export default {
       })
 
     return {
-      projects: projects.map((projects) => ({
-        ...projects,
-        path: projects.path.replace(`/${app.i18n.locale}`, '')
-      }))
+      artworks
     };
-  },
+  }
 }
 </script>

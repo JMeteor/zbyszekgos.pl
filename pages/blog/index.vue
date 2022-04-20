@@ -27,7 +27,7 @@ export default {
     return {
       posts: posts.map((posts) => ({
         ...posts,
-        path: posts.path.replace(`/${app.i18n.locale}`, ''),
+        // path: posts.path.replace(`/${app.i18n.locale}`, ''),
       }))
     };
   },

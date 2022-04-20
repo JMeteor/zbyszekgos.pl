@@ -2,11 +2,11 @@
   <div class="fixed bottom-0 left-12 m-3">
     <div class="icon">
       <nuxt-link
-        v-if="$i18n.locale === 'en'"
-        :to="switchLocalePath('pl')">PL</nuxt-link>
+        v-if="$i18n.locale !== 'pl'"
+        :to="switchLocalePath('pl')">Polski</nuxt-link>
       <nuxt-link
-        v-if="$i18n.locale === 'pl'"
-        :to="switchLocalePath('en')">EN</nuxt-link>
+        v-if="$i18n.locale !== 'en'"
+        :to="switchLocalePath('en')">English</nuxt-link>
     </div>
   </div>
 </template>

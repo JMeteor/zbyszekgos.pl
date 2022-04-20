@@ -18,7 +18,7 @@
 export default {
   name: 'BlogPost',
   async asyncData({ $content, params, app, error }) {
-    const post = await $content(app.i18n.locale, 'blog', params.blog)
+    const post = await $content(app.i18n.locale, 'blog', params.slug)
       .fetch()
       .catch(() => {
         error({

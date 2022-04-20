@@ -1,6 +1,6 @@
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssEasingGradients from 'postcss-easing-gradients'
-import * as SITE_INFO from './content/pl/site/info.json'
+import * as SITE_INFO from './content/site/info.json'
 import { COLOR_MODE_FALLBACK } from './utils/globals.js'
 
 export default {
@@ -114,18 +114,21 @@ export default {
       {
         code: 'pl',
         iso: 'pl-PL',
-        file: 'pl-PL.json'
+        file: 'pl.json',
+        name: 'Polski'
       },
       {
         code: 'en',
         iso: 'en-GB',
-        file: 'en-GB.json'
+        file: 'en.json',
+        name: 'English'
       }
     ],
     langDir: 'locales/',
     vueI18n: {
       fallbackLocale: 'pl'
     },
+    strategy: 'prefix_except_default'
   },
   tailwindcss: {
     viewer: false, // disabled because it causes `Error: Cannot find module 'tailwindcss/resolveConfig'`, fixed in https://github.com/nuxt-community/tailwindcss-module/pull/303
