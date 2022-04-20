@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="modern-container d-flex">
     <nav class="scrim-bg fixed z-40 top-0 inset-x-0 pt-3 px-3" aria-label="Main Menu">
       <ul class="flex">
         <li class="flex-1">
@@ -16,16 +16,45 @@
         </li>
       </ul>
     </nav>
+    <div class="d-flex">
+      <LanguageSwitcher />
+      <ColorModePicker />
+    </div>
+
   </header>
 </template>
 
 <script>
+import LanguageSwitcher from "~/components/global/LanguageSwitcher";
+import ColorModePicker from "~/components/global/ColorModePicker";
 export default {
-  name: 'Header'
+  name: 'Header',
+  components: {ColorModePicker, LanguageSwitcher}
 }
 </script>
 
 <style lang="scss" scoped>
+header {
+  nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      > li {
+        margin: 0 1rem;
+      }
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
 .scrim-bg {
   &::before {
     content: '';
@@ -39,8 +68,6 @@ export default {
     animation: fadeIn1 500ms ease-in-out;
     background: linear-gradient(to bottom, #111827, cubic-bezier(0.15, 0, 0.45, 1), transparent);
   }
-}
-.nuxt-link-exact-active {
 }
 
 .light {

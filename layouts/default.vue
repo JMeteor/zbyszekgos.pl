@@ -2,8 +2,6 @@
   <div class="wrapper">
     <Header />
     <nuxt />
-    <LanguageSwitcher />
-    <ColorModePicker />
   </div>
 </template>
 <script>

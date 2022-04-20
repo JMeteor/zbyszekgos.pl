@@ -3,10 +3,10 @@
     <div class="icon">
       <nuxt-link
         v-if="$i18n.locale === 'en'"
-        :to="switchLocalePath('pl')">PL</nuxt-link>
+        :to="switchLocalePath('pl')">Polski</nuxt-link>
       <nuxt-link
         v-if="$i18n.locale === 'pl'"
-        :to="switchLocalePath('en')">EN</nuxt-link>
+        :to="switchLocalePath('en')">English</nuxt-link>
     </div>
   </div>
 </template>
