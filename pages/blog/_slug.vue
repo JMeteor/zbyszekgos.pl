@@ -17,8 +17,8 @@
 <script>
 export default {
   name: 'BlogPost',
-  async asyncData({ $content, params, app, error }) {
-    const post = await $content(app.i18n.locale, 'blog', params.slug)
+  async asyncData({ $content, params, error }) {
+    const post = await $content('blog', params.slug)
       .fetch()
       .catch(() => {
         error({
@@ -27,9 +27,6 @@ export default {
         });
       });
     return { post };
-  },
-  mounted() {
-    console.log('mounted post', this.post);
   },
   methods: {
     formatDate(dateString) {
