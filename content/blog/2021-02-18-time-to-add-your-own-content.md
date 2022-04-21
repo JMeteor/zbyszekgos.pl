@@ -14,7 +14,7 @@ venerat.
 Sic **nostrae habet**: este, sua illic auctor causam. Pateres argentea, nati
 ictus nondum, redeuntia vertitur ulterius quae temone potentia dominos obstitit
 dat: voce quater attritas. Imagine quamquam quoque
-[projects](/projects) et sonabat Cybeleius
+[work](/work) et sonabat Cybeleius
 albentes primaque sidera, omnia.
 
 ## Apud sunt

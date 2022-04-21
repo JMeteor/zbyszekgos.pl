@@ -79,7 +79,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/content', 'nuxt-i18n', 'nuxt-purgecss'],
+  modules: ['@nuxt/content', 'nuxt-purgecss'],
   /*
    ** Build configuration
    */
@@ -107,28 +107,6 @@ export default {
   // ? The content property: https://content.nuxtjs.org/configuration
   content: {
     dir: 'content'
-  },
-  i18n: {
-    defaultLocale: 'pl',
-    locales: [
-      {
-        code: 'pl',
-        iso: 'pl-PL',
-        file: 'pl.json',
-        name: 'Polski'
-      },
-      {
-        code: 'en',
-        iso: 'en-GB',
-        file: 'en.json',
-        name: 'English'
-      }
-    ],
-    langDir: 'locales/',
-    vueI18n: {
-      fallbackLocale: 'pl'
-    },
-    strategy: 'prefix_except_default'
   },
   tailwindcss: {
     viewer: false, // disabled because it causes `Error: Cannot find module 'tailwindcss/resolveConfig'`, fixed in https://github.com/nuxt-community/tailwindcss-module/pull/303

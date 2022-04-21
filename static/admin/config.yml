@@ -16,19 +16,14 @@ public_folder: /media
 
 locale: 'pl'
 
-i18n:
-  structure: multiple_folders
-  locales: [pl, en]
-  default_locale: pl
-
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
   - label: Ustawienia strony
-    name: 'site'
+    name: site
     files:
       - label: Informacje
         name: info
-        file: 'content/site/info.json'
+        file: content/site/info.json
         format: json
         editor:
           preview: false
@@ -55,59 +50,78 @@ collections:
 
   - name: about
     label: O mnie
-    folder: content/about
+    file: content/about.md
     create: false
     format: frontmatter
-    i18n:
-      structure: multiple_files
-      locales: [pl, en]
     fields:
       - {
         label: Tytuł,
         name: title,
         widget: string,
         required: true,
-        i18n: true
       }
       - {
         label: Zdjęcie,
         name: cover,
         widget: image,
         required: true,
-        i18n: duplicate
       }
       - {
         label: Treść,
         name: body,
         widget: markdown,
         required: true,
-        i18n: true
       }
   - name: blog
     label: Aktualności
     folder: content/blog
     create: true
-    format: 'frontmatter'
-    slug: '{{fields.createdAt}}-{{slug}}'
+    format: frontmatter
+    slug: {{fields.createdAt}}-{{slug}}
     # editor:
     #   preview: true
     fields:
-      - { label: 'Data utworzenia', name: 'createdAt', widget: 'datetime', date_format: "YYYY-MM-DD", time_format: false }
-      - { label: 'Tytuł', name: 'title', widget: 'string', required: true }
-      - { label: 'Opis', name: 'description', widget: 'string', required: false }
-      - { label: 'Tekst', name: 'body', widget: 'markdown', required: false }
+      - {
+        label: Data utworzenia,
+        name: createdAt,
+        widget: datetime,
+        date_format: YYYY-MM-DD,
+        time_format: false
+      }
+      - {
+        label: Tytuł,
+        name: title,
+        widget: string,
+        required: true
+      }
+      - {
+        label: Opis,
+        name: description,
+        widget: string,
+        required: false
+      }
+      - {
+        label: Tekst,
+        name: body,
+        widget: markdown,
+        required: false
+      }
   - name: work
-    label: Projekty
-    label_singular: Projekt
+    label: Prace
+    label_singular: Praca
     folder: content/work
     create: true
     format: frontmatter
-    slug: '{{slug}}'
-    preview_path: 'work/{{slug}}'
-    i18n:
-      structure: multiple_files
-      locales: [pl, en]
+    slug: {{slug}}
+    preview_path: work/{{slug}}
     fields:
+      - {
+        label: Data utworzenia,
+        name: createdAt,
+        widget: datetime,
+        date_format: YYYY-MM-DD,
+        time_format: false
+      }
       - {
         label: Kategoria,
         name: category,
@@ -137,14 +151,12 @@ collections:
         name: title,
         widget: string,
         required: true,
-        i18n: true,
       }
       - {
         label: Opis,
         name: description,
         widget: string,
         required: false,
-        i18n: true,
       }
       - {
         label: Okładka,
@@ -158,7 +170,6 @@ collections:
         name: body,
         widget: markdown,
         required: false,
-        i18n: true,
       }
       - {
         label: Galeria zdjęć,

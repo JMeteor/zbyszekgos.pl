@@ -5,7 +5,7 @@
       <ul>
         <li v-for="(post, index) in posts" :key="index">
           <p>{{ post.description }}</p>
-          <nuxt-link :to="localePath(post.path)">LINK</nuxt-link>
+          <pre>{{ post }}</pre>
         </li>
       </ul>
     </section>
@@ -15,9 +15,9 @@
 <script>
 export default {
   name: 'BlogOverview',
-  async asyncData({ $content, app, error }) {
-    const posts = await $content(app.i18n.locale, 'blog')
-      .only(['title', 'description'])
+  async asyncData({ $content, error }) {
+    const posts = await $content('blog')
+      .only(['title', 'description', 'slug'])
       .limit(5)
       .fetch()
       .catch(() => {
@@ -25,10 +25,7 @@ export default {
       })
 
     return {
-      posts: posts.map((posts) => ({
-        ...posts,
-        // path: posts.path.replace(`/${app.i18n.locale}`, ''),
-      }))
+      posts
     };
   },
 }

@@ -12,13 +12,12 @@
 
 <script>
 export default {
-  async asyncData({ $content, app, params, error }) {
-    const aboutData = await $content(app.i18n.locale, 'about', params.about)
+  async asyncData({ $content, error }) {
+    const about = await $content('about')
       .fetch()
       .catch(() => {
-        error({ message: "About Page not found" });
+        error({ statusCode: 404, message: "Page not found" });
       })
-    const about = aboutData[0]
     return { about };
   }
 }
