@@ -18,8 +18,8 @@ locale: 'pl'
 
 # Docs: https://www.netlifycms.org/docs/configuration-options/#collections
 collections:
-  - label: Ustawienia strony
-    name: site
+  - name: site
+    label: Ustawienia strony
     files:
       - label: Informacje
         name: info
@@ -46,7 +46,6 @@ collections:
             widget: string,
             pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
           }
-          # - { label: Site Email, name: siteemail, widget: string, required: false }
 
   - name: about
     label: O mnie
@@ -72,6 +71,7 @@ collections:
         widget: markdown,
         required: true,
       }
+
   - name: blog
     label: Aktualności
     folder: content/blog
@@ -106,6 +106,7 @@ collections:
         widget: markdown,
         required: false
       }
+
   - name: work
     label: Prace
     label_singular: Praca
@@ -182,4 +183,28 @@ collections:
           name: image,
           widget: image,
         },
+      }
+  - name: contact
+    label: Kontakt
+    file: content/contact.md
+    create: false
+    format: frontmatter
+    fields:
+      - {
+        label: Tytuł,
+        name: title,
+        widget: string,
+        required: true,
+      }
+      - {
+        label: Zdjęcie,
+        name: cover,
+        widget: image,
+        required: true,
+      }
+      - {
+        label: Informacje,
+        name: body,
+        widget: markdown,
+        required: true,
       }

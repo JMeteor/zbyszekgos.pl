@@ -1,8 +1,9 @@
 <template>
   <main>
     <section class="self-center flex flex-col flex-1 items-center justify-center">
-      <h1 class="title text-center">Nuxt — Tailwind — Netlify CMS</h1>
-      <h2 class="subtitle text-center">Witam</h2>
+      <h1 class="title text-center">Zbyszek Gos - rzeźbiarz</h1>
+      <h2 class="subtitle text-center">Elo kolego</h2>
+      <video src='/media/hero.mp4' autoplay></video>
     </section>
 
     <section class="mt-8">
