@@ -10,7 +10,8 @@ module.exports = {
     darkMode: 'class',
     extend: {
       fontFamily: {
-        sans: ['Inter']
+        sans: 'CormorantGaramond, sans-serif',
+        serif: 'Cormorant Garamond'
       },
       colors: {
         gray: {

@@ -1,8 +1,18 @@
 <template>
   <main>
     <section class="self-center flex flex-col flex-1 items-center justify-center">
-      <h1 class="title text-center">Zbyszek Gos - rzeźbiarz</h1>
-      <h2 class="subtitle text-center">Elo kolego</h2>
+      <h1
+        ref="title"
+        class="title text-center">Zbyszek Gos</h1>
+      <h2
+        ref="subtitle"
+        class="subtitle text-center">
+        <span>Rzeźby</span>
+        <span>|</span>
+        <span>Nagrobki</span>
+        <span>|</span>
+        <span>Pomniki</span>
+      </h2>
       <video src='/media/hero.mp4' autoplay></video>
     </section>
 
@@ -26,6 +36,8 @@
 </template>
 
 <script>
+import { gsap } from "gsap";
+
 export default {
   name: 'Homepage',
   async asyncData({ $content, error }) {
@@ -41,5 +53,13 @@ export default {
       posts
     }
   },
+  mounted() {
+    gsap.from(this.$refs.title, {
+      duration: 1, opacity: 0, y: -50
+    })
+    gsap.from(this.$refs.subtitle, {
+      duration: 1, opacity: 0, x: -50
+    })
+  }
 }
 </script>
