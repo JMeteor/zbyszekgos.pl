@@ -7,7 +7,19 @@ html {
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  //@apply transition-colors duration-200 ease-in-out;
+  color: var(--color-primary);
+  background-color: var(--bg-color);
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+picture {
+  display: block;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }

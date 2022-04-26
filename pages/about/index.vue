@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full">
-    <picture class="block max-w-xl ml-auto mr-auto">
-      <img :src="about.cover" />
-    </picture>
-    <article class="about mx-auto max-w-xl">
+  <div class="container">
+    <article class="about m-x-auto">
+      <picture>
+        <img :src="about.cover" />
+      </picture>
       <h1 class="text-center text-5xl mt-6 mb-4">{{ about.title }}</h1>
       <nuxt-content :document="about" class="about text-lg" />
     </article>

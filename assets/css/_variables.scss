@@ -8,11 +8,17 @@
   --color-primary-200: #C3CBDC;
   --color-primary-300: #9BA8C2;
   --color-primary-400: #7686A6;
-  --color-primary:     #526488;
+
+  --color-primary:     #503B3E;
+  --bg-color: #D9DFE9;
+
   --color-primary-600: #3E4F70;
   --color-primary-700: #2C3A57;
   --color-primary-800: #1C263B;
   --color-primary-900: #0D131E;
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Proza Libre', sans-serif;
 
   --text: var(--color-primary-200);
   --text-secondary: var(--color-primary-400);

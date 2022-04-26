@@ -1,17 +1,12 @@
 <template>
-  <nav class="scrim-bg fixed z-40 top-0 inset-x-0 pt-3 px-3" aria-label="Main Menu">
-    <ul class="flex">
-      <li class="flex-1">
-        <nuxt-link class="btn block" to="/">Home</nuxt-link>
-      </li>
-      <li class="flex-1 ml-2">
-        <nuxt-link class="btn block" to="/about">Vitae</nuxt-link>
-      </li>
-      <li class="flex-1 ml-2">
-        <nuxt-link class="btn block" to="/work">Prace</nuxt-link>
-      </li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="container" aria-label="Main Menu">
+      <nuxt-link class="btn block" to="/">Home</nuxt-link>
+      <nuxt-link class="btn block" to="/about">Vitae</nuxt-link>
+      <nuxt-link class="btn block" to="/work">Prace</nuxt-link>
+    </nav>
+  </header>
+
 </template>
 
 <script>
@@ -20,7 +15,28 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+header {
+}
+
+nav {
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 15px;
+  padding: 32px 0;
+  a {
+    color: var(--color-primary);
+    font-family: var(--font-serif);
+    font-size: 32px;
+    text-align: center;
+    text-decoration: none;
+    &:hover,
+    &:visited {
+      color: inherit;
+    }
+  }
+}
 /* Need two because of smoother switching between color modes */
 @keyframes fadeIn1 {
   from { opacity: 0; }

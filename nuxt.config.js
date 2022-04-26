@@ -41,19 +41,13 @@ export default {
       {
         rel: 'preload',
         as: 'style',
-        href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap',
-        media: 'print',
-        onload: `this.media='all'`
+        href: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,600&family=Proza+Libre:ital@0;1&display=swap'
       }
     ],
     noscript: [
       {
         innerHTML:
-          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&display=swap">'
+          '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,600&family=Proza+Libre:ital@0;1&display=swap">'
       }
     ],
     __dangerouslyDisableSanitizers: ['noscript']
@@ -65,7 +59,9 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/css/main.css'],
+  css: [
+    '@/assets/css/main.scss'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -73,11 +69,17 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/color-mode', '@nuxtjs/svg', '@nuxtjs/pwa'],
+  buildModules: [
+    '@nuxtjs/color-mode',
+    '@nuxtjs/svg',
+    '@nuxtjs/pwa'
+  ],
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxt/content'],
+  modules: [
+    '@nuxt/content'
+  ],
   /*
    ** Build configuration
    */
