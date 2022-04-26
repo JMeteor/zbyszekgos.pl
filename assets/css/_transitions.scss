@@ -2,7 +2,7 @@
 .page-enter-active,
 .page-leave-active {
   transition-property: opacity;
-  @apply duration-200;
+  //@apply duration-200;
 }
 .page-enter,
 .page-leave-to {
@@ -16,7 +16,7 @@
   transition-property: height, opacity, transform;
   transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
   overflow: hidden;
-  @apply duration-200;
+  //@apply duration-200;
 }
 
 .slide-right-leave-active {

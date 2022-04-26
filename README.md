@@ -13,9 +13,6 @@ An opinionated starter template for a quick start with the following technologie
 - Nuxt.js (in "universal mode", where both SEO and speed is great)
 - Vue 2
 - Vuex (supported by adding to `/store`, but not implemented)
-- PostCSS (no SCSS)
-- Tailwind
-- PurgeCSS (removes unused CSS-selectors)
 - Dark mode & ColorModePicker (Set to "dark mode first")
 - Netlify CMS (no need for a separate server)
 - Prettier

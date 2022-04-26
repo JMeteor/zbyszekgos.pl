@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style lang="postcss" scoped>
+<style scoped>
 .arrow {
   display: flex;
   flex-direction: column;
